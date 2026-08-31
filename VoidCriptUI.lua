@@ -36,7 +36,7 @@ local RunService = game:GetService("RunService")
 local OWNER = "WorkAccount211"
 local REPO = "VoidCriptUI_lib-Final-"
 local DEFAULT_VERSION = "main"
-local BOOT_LOGO = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/refs/heads/main/images/symbol.png"
+local BOOT_LOGO = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/icon.png"
 local EXPECTED_LIBRARY_VERSION = "3.0.0"
 
 local MODULES = {
