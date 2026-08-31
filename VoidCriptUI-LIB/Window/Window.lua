@@ -125,7 +125,7 @@ return function(Void)
 		local logoSize = Scale.u(16)
 		local logo = Util.New("ImageLabel", {
 			Name = "Logo",
-			Image = cfg.Logo or "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/refs/heads/main/images/symbol.png",
+			Image = cfg.Logo or "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/icon.png",
 			ScaleType = Enum.ScaleType.Fit,
 			AnchorPoint = Vector2.new(0, 0.5),
 			Position = UDim2.new(0, Scale.u(13), 0.5, 0),
