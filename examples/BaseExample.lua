@@ -386,7 +386,7 @@ imageButtons:CreateImageButton({
 
 imageButtons:CreateImageButton({
 	Name = "Custom asset",
-	Image = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/refs/heads/main/images/symbol.png",
+	Image = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/icon.png",
 	Layout = "IconText",
 })
 
