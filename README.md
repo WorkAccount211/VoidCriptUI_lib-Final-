@@ -1,107 +1,66 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/refs/heads/main/images/symbol.png" width="110" alt="VoidCriptUI">
+<img src="https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/banner.png" width="100%" alt="VoidCriptUI banner">
+
+<br>
+
+<img src="https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/icon.png" width="96" alt="VoidCript icon">
 
 # VoidCriptUI
 
-**A modern, modular Roblox/Luau GUI library built by VoidCript.**
+### Modern • Modular • Adaptive • Performance-focused Roblox UI Library
 
-CompKiller-inspired visual polish · Weave-inspired ergonomics · lazy loading · adaptive UI · runtime themes · flags · JSON configs · plugins
+**Built by VoidCript**
 
-[![Version](https://img.shields.io/badge/version-3.0.0-C73E6E?style=for-the-badge)](https://github.com/WorkAccount211/VoidCriptUI_lib-Final-/releases)
-[![Luau](https://img.shields.io/badge/Luau-5.1%2B-blue?style=for-the-badge)](https://luau-lang.org/)
-[![Mobile](https://img.shields.io/badge/Mobile-Supported-50C878?style=for-the-badge)](#mobile--responsive-ui)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)](LICENSE)
+<p>
+  <a href="https://github.com/WorkAccount211/VoidCriptUI_lib-Final-"><img src="https://img.shields.io/badge/version-3.0.0-8B5CF6?style=for-the-badge&labelColor=111318" alt="Version"></a>
+  <a href="https://github.com/WorkAccount211/VoidCriptUI_lib-Final-/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-VoidCript_Custom-9CA3AF?style=for-the-badge&labelColor=111318" alt="License"></a>
+  <a href="https://github.com/WorkAccount211/VoidCriptUI_lib-Final-/tree/main/examples"><img src="https://img.shields.io/badge/examples-included-22C55E?style=for-the-badge&labelColor=111318" alt="Examples"></a>
+  <a href="https://github.com/WorkAccount211/VoidCriptUI_lib-Final-/wiki"><img src="https://img.shields.io/badge/docs-Wiki-38BDF8?style=for-the-badge&labelColor=111318" alt="Documentation"></a>
+</p>
 
-[Quick Start](#quick-start) · [Features](#features) · [API](#api-reference) · [Examples](#examples) · [Wiki](../../wiki)
+[Quick Start](#-quick-start) · [Features](#-features) · [Elements](#-elements) · [Flags](#-flags) · [Configs](#-configs) · [Themes](#-themes) · [Watermark](#-watermark) · [Keylist](#-keylist) · [Plugins](#-plugins) · [API](#-api-reference) · [Documentation](#-documentation)
 
 </div>
 
 ---
 
-## Overview
+## About
 
-VoidCriptUI is a modular GUI library for Roblox/Luau scripts. It is designed to keep the public API small while providing a large feature set: adaptive layouts, lazy-built tabs, live theming, flags, JSON configuration management, keybinds, notifications, tooltips, watermark/keybind overlays, plugin hooks and a versioned single-file loader.
+VoidCriptUI is a modular Luau GUI framework for Roblox scripts that need a polished interface without sacrificing responsiveness.
 
-The repository contains the loader, modular source, examples, images and documentation sources. The loader is the intended distribution entry point; users do not need to manually require individual library modules.
+The project focuses on modern dark visuals, lazy UI creation, adaptive layouts, runtime theming, flags, JSON configuration, keybinds, overlays, notifications, plugins, logging and performance tooling.
 
-> **Runtime note:** compatibility depends on the Roblox runtime/executor environment and the APIs it exposes. Repository/static checks do not replace a real Roblox runtime test.
+**Project identity:** the public-facing author and brand is **VoidCript**.
 
 ---
 
-## Features
+## ✨ Features
 
 | Area | Included |
 |---|---|
-| UI architecture | Modular source, lazy tabs, reusable controls, sections and overlays |
-| Performance | CanvasGroup fades, shared input routing, throttled callbacks, pooled/list rendering where applicable |
-| Responsive UI | Phone, tablet, desktop and wide-screen profiles; compact mode; touch hit-target scaling |
-| Navigation | Global search, active-tab indicator, minimise/restore, resize, mobile bubble |
-| Controls | Toggle, Slider, RangeSlider, Knob, Dropdown, MultiDropdown, Input, Keybind, ColorPicker, Button, ImageButton |
-| Display | Label, Paragraph, Divider, ProgressBar, Image, ListBox, Table, Collapsible sections |
-| State | Flags, `DependsOn`, visibility/enabled state, change signals, strict flag diagnostics |
-| Configs | JSON, typed values, autosave, per-game profiles, rename/delete/list, import/export, migrations |
-| Themes | Runtime `SetTheme`, presets, theme editor, custom fonts, scale controls |
-| Input | Keyboard modifiers, MB1/MB2/MB3, Toggle/Hold/Always modes, game input lock |
-| Feedback | Notifications, progress notifications, confirm/prompt/choice dialogs, delayed tooltips |
-| DX | Log levels, guarded callbacks, ring-buffer logs, performance profiler |
-| Extensibility | Third-party plugins, custom elements, icons, themes and watermark modules |
-| Overlays | Configurable Watermark, FPS/Ping telemetry, extended Keybind List |
-| Distribution | Versioned loader, bounded parallel download, retries, jsDelivr fallback, local cache, cancellation |
+| UI architecture | Modular Core / Elements / Services / Window layers |
+| Lazy loading | Tab contents materialize on first use |
+| Animation | TweenService + CanvasGroup based fades |
+| Responsive UI | Phone / Tablet / Desktop / Wide profiles |
+| Mobile UX | Touch-sized controls + floating toggle |
+| Search | Global settings search |
+| Window | Resize, minimize, toggle key, saved geometry |
+| Elements | Toggle, Slider, RangeSlider, Knob, Dropdown, MultiDropdown, Input, Keybind, ColorPicker, Button, ImageButton, Paragraph, ProgressBar, Image, ListBox, Table, Collapsible |
+| State | Global `Flags`, control lookup, subscriptions, dependencies |
+| Configuration | JSON, typed values, autosave, migrations, export/import |
+| Theme system | Runtime `SetTheme`, presets, editor, scale and fonts |
+| Watermark | Player, FPS, ping, memory, time, date, game and custom modules |
+| Keylist | Name, mode, key, state, hits, category, last used |
+| DX | Logging levels, guarded callbacks, profiler |
+| Plugins | Third-party elements, themes, icons and Watermark modules |
+| Distribution | Single-file versioned loader + minified loader |
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
-The simplest supported installation is a single `loadstring` call:
-
-```lua
-local VoidLib = loadstring(game:HttpGet(
-    "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/VoidCriptUI.lua"
-))()
-
-local Window = VoidLib:CreateWindow({
-    Name = "My Script",
-    Subtitle = "VoidCriptUI demo",
-    ToggleKey = "RightShift",
-})
-
-local Tab = Window:CreateTab("Main", "home")
-local Section = Tab:CreateSection("Example")
-
-Section:CreateToggle({
-    Name = "Enabled",
-    Flag = "Enabled",
-    Default = false,
-    Callback = function(value)
-        print("Enabled:", value)
-    end,
-})
-
-Section:CreateSlider({
-    Name = "Amount",
-    Flag = "Amount",
-    Range = {0, 100},
-    Increment = 1,
-    CurrentValue = 50,
-})
-```
-
-For production scripts, pin a version tag instead of tracking `main`:
-
-```lua
-local VoidLib = loadstring(game:HttpGet(
-    "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/v3.0.0/VoidCriptUI.lua"
-))()
-```
-
----
-
-## Loader
-
-`VoidCriptUI.lua` is the main single-file distribution loader. It downloads the modular library, displays a loading UI, caches sources when supported, retries failed downloads and falls back to jsDelivr.
-
-### Loader configuration
+The recommended entry point is the single-file loader in the repository root:
 
 ```lua
 local VoidLib = loadstring(game:HttpGet(
@@ -113,358 +72,250 @@ local VoidLib = loadstring(game:HttpGet(
     Cancellable = true,
     Parallel = 6,
     Retries = 2,
-    Title = "VoidCriptUI",
-    Subtitle = "v3.0.0",
-    OnProgress = function(done, total, stage)
-        print(("[%d/%d] %s"):format(done, total, stage))
-    end,
 })
 
 if not VoidLib then
-    return -- cancelled or failed to load
-end
-```
-
-### Loader options
-
-| Option | Type | Default | Description |
-|---|---|---:|---|
-| `Version` | string | `"main"` | Branch, tag or commit SHA |
-| `Cache` | boolean | `true` | Cache downloaded sources when filesystem APIs exist |
-| `Loading` | boolean | `true` | Show the boot/loading UI |
-| `Cancellable` | boolean | `true` | Show the Cancel button |
-| `Parallel` | number | `6` | Maximum concurrent module downloads |
-| `Retries` | number | `2` | Retries per source before CDN fallback |
-| `Title` | string | `"voidcript"` | Loader title |
-| `Subtitle` | string | library version | Loader subtitle |
-| `Logo` | string | built-in logo | Override loader image |
-| `OnProgress` | function | `nil` | `function(done, total, stage)` |
-| `Logger` | boolean | `false` | Print loader diagnostics |
-
-### Loader diagnostics
-
-```lua
-local info = VoidLib:GetLoaderInfo()
-
-print(info.Version)
-print(info.LibraryVersion)
-print(info.CachePath)
-print(info.CachedSources)
-print(info.Modules)
-print(info.LoadedIn)
-
-VoidLib:ClearLoaderCache()
-```
-
----
-
-## Creating Windows, Tabs and Sections
-
-```lua
-local Window = VoidLib:CreateWindow({
-    Name = "VoidCript",
-    Subtitle = "Control Panel",
-    ToggleKey = "RightShift",
-    LazyLoading = true,
-    Resizable = true,
-    MinimiseStyle = "Icon", -- Icon | MiniBar
-})
-
-local Combat = Window:CreateTab("Combat", "sword")
-local Aim = Combat:CreateSection({
-    Name = "Aim Assist",
-    Side = "left",
-})
-
-Aim:CreateToggle({
-    Name = "Enabled",
-    Flag = "Aim.Enabled",
-})
-```
-
-Sections may also be attached to subtabs and can be cleared or destroyed at runtime:
-
-```lua
-Aim:SetVisible(false)
-Aim:Clear()
-Aim:Destroy()
-```
-
----
-
-## Elements
-
-### Toggle
-
-```lua
-local Toggle = Section:CreateToggle({
-    Name = "Fly",
-    Flag = "Fly.Enabled",
-    Default = false,
-    Callback = function(value)
-        print("Fly:", value)
-    end,
-})
-
-Toggle:Set(true)
-print(Toggle:Get())
-```
-
-### Slider
-
-```lua
-Section:CreateSlider({
-    Name = "Speed",
-    Flag = "Fly.Speed",
-    Range = {0, 500},
-    Increment = 1,
-    CurrentValue = 100,
-    CallbackOnRelease = true,
-    Callback = function(value)
-        print("Speed:", value)
-    end,
-})
-```
-
-The value can also be edited numerically through the slider's value field.
-
-### Range Slider
-
-```lua
-Section:CreateRangeSlider({
-    Name = "Distance",
-    Flag = "Distance",
-    Range = {0, 1000},
-    CurrentMin = 100,
-    CurrentMax = 500,
-    Increment = 10,
-})
-```
-
-### Knob / Dial
-
-```lua
-Section:CreateKnob({
-    Name = "FOV",
-    Flag = "FOV",
-    Range = {30, 180},
-    CurrentValue = 90,
-    Increment = 1,
-})
-```
-
-### Dropdown / MultiDropdown
-
-```lua
-Section:CreateDropdown({
-    Name = "Mode",
-    Flag = "Mode",
-    Options = {"Legit", "Rage", "Custom"},
-    SearchBox = true,
-})
-
-Section:CreateMultiDropdown({
-    Name = "Features",
-    Flag = "Features",
-    Options = {"ESP", "Tracers", "Boxes", "Names"},
-    Max = 4,
-})
-```
-
-### Input
-
-```lua
-Section:CreateInput({
-    Name = "Username",
-    Flag = "Username",
-    PlaceholderText = "Enter a name",
-    MaxLength = 32,
-    Pattern = "^[%w_]+$",
-})
-```
-
-### Keybind
-
-```lua
-Section:CreateKeybind({
-    Name = "Aimbot",
-    Flag = "Aimbot.Key",
-    Key = "MB2",
-    Mode = "Hold", -- Always | Toggle | Hold
-})
-```
-
-Modifiers are supported:
-
-```lua
-Key = "Ctrl+Shift+K"
-```
-
-Mouse buttons are supported as `MB1`, `MB2` and `MB3` where the runtime exposes them.
-
-### ColorPicker
-
-```lua
-Section:CreateColorPicker({
-    Name = "ESP Color",
-    Flag = "ESP.Color",
-    Default = Color3.fromRGB(100, 0, 255),
-    Alpha = 0.9,
-    Rainbow = false,
-})
-```
-
-HEX values can be entered manually; palettes and rainbow mode are also supported.
-
-### Buttons and confirmation dialogs
-
-```lua
-Section:CreateButton({
-    Name = "Reset Everything",
-    Risky = true,
-    Callback = function()
-        print("reset confirmed")
-    end,
-})
-```
-
-### Rich text paragraph
-
-```lua
-Section:CreateParagraph({
-    Title = "About",
-    Content = [[
-**VoidCriptUI** supports *rich text*, `inline code`,
-> quotes
-and ```code blocks```.
-]],
-})
-```
-
-### ListBox / Table
-
-```lua
-Section:CreateListBox({
-    Name = "Players",
-    Flag = "SelectedPlayer",
-    Items = {"Alice", "Bob", "Charlie"},
-    MultiSelect = false,
-})
-
-Section:CreateTable({
-    Name = "Statistics",
-    Columns = {"Player", "Kills", "Deaths"},
-    Rows = {
-        {"Alice", 12, 4},
-        {"Bob", 7, 8},
-    },
-    Selectable = true,
-})
-```
-
----
-
-## Flags and State
-
-Flags are the library-wide state layer. A control with a `Flag` becomes readable and writable from any part of the script.
-
-```lua
-Section:CreateToggle({
-    Name = "Fly",
-    Flag = "Fly.Enabled",
-})
-
-Section:CreateSlider({
-    Name = "Fly Speed",
-    Flag = "Fly.Speed",
-    Range = {0, 500},
-    Increment = 1,
-})
-
-if VoidLib.Flags["Fly.Enabled"] then
-    print("Fly speed:", VoidLib.Flags["Fly.Speed"])
+    return
 end
 
-VoidLib:SetFlag("Fly.Enabled", true)
-local speed = VoidLib:GetFlag("Fly.Speed", 100)
-```
-
-### Flag events
-
-```lua
-VoidLib:OnFlagChanged("Fly.Enabled", function(value)
-    print("Fly changed:", value)
-end)
-
-VoidLib:OnFlagChanged("*", function(flag, value)
-    print("Changed:", flag, value)
-end)
-```
-
-### Conditional visibility
-
-```lua
-Section:CreateToggle({
-    Name = "ESP",
-    Flag = "ESP.Enabled",
-})
-
-Section:CreateSlider({
-    Name = "ESP Distance",
-    Flag = "ESP.Distance",
-    Range = {0, 2000},
-    DependsOn = "ESP.Enabled",
-})
-```
-
-`DependsOn` is evaluated from flag changes rather than from a per-frame polling loop.
-
----
-
-## Configs
-
-The configuration layer supports JSON, typed values, autosave, migrations and optional per-game profiles.
-
-```lua
-VoidLib:SaveConfig("Default")
-VoidLib:LoadConfig("Default")
-VoidLib:ListConfigs()
-VoidLib:RenameConfig("Default", "PvP")
-VoidLib:DeleteConfig("PvP")
-```
-
-Import/export allows configs to be shared as strings:
-
-```lua
-local code = VoidLib:ExportConfig()
-print(code)
-
-VoidLib:ImportConfig(code, "Shared")
-```
-
-Enable autosave in the window configuration:
-
-```lua
 local Window = VoidLib:CreateWindow({
     Name = "My Script",
+    Subtitle = "VoidCriptUI",
+    ToggleKey = "RightShift",
+
     ConfigurationSaving = {
         Enabled = true,
         FolderName = "MyScript",
         FileName = "Default",
         AutoSave = true,
-        AutoSaveDelay = 1,
-        PerGame = true,
     },
 })
+
+local Main = Window:CreateTab("Main", "home")
+local Section = Main:CreateSection("General")
+
+Section:CreateToggle({
+    Name = "Example Toggle",
+    Flag = "ExampleToggle",
+    Callback = function(value)
+        print("ExampleToggle:", value)
+    end,
+})
+
+Section:CreateSlider({
+    Name = "Example Slider",
+    Flag = "ExampleSlider",
+    Range = {0, 100},
+    Increment = 1,
+    CurrentValue = 50,
+})
+
+print("Toggle:", VoidLib.Flags.ExampleToggle)
+print("Slider:", VoidLib.Flags.ExampleSlider)
 ```
 
-Persistence depends on filesystem APIs supplied by the runtime. Without them, the library can still run, but file-backed config persistence is unavailable.
+For reproducible deployments, pin a version instead of following `main`:
+
+```lua
+local VoidLib = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/v3.0.0/VoidCriptUI.lua"
+))()
+```
 
 ---
 
-## Themes
+## 📦 Loader
 
-Themes are live: token changes repaint registered instances without rebuilding the window.
+`VoidCriptUI.lua` is the public distribution entry point. It downloads the modular library, shows the loading UI, handles retries/fallbacks and can use a local cache when the runtime exposes filesystem functions.
+
+### Loader options
+
+```lua
+local VoidLib = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/VoidCriptUI.lua"
+))({
+    Version     = "main",
+    Cache       = true,
+    Loading     = true,
+    Cancellable = true,
+    Parallel    = 6,
+    Retries     = 2,
+    Title       = "VoidCriptUI",
+    Subtitle    = "v3.0.0",
+    Width       = 390,
+    OnProgress  = function(done, total, stage)
+        print(("[VoidCript.Loader] %d/%d — %s"):format(done, total, stage))
+    end,
+    Logger      = true,
+})
+```
+
+The boot screen is generated by the loader and uses CanvasGroup-based fades. It presents progress, percentage, stage, elapsed time and estimated time remaining.
+
+---
+
+## 🧩 Elements
+
+| Element | Constructor | Main capabilities |
+|---|---|---|
+| Toggle | `CreateToggle` | Styles, flags, keybind, icon |
+| Slider | `CreateSlider` | Numeric editing and callback throttling |
+| Range Slider | `CreateRangeSlider` | Two handles for min/max |
+| Knob | `CreateKnob` | Circular alternative to a slider |
+| Dropdown | `CreateDropdown` | Searchable single selection |
+| MultiDropdown | `CreateMultiDropdown` | Checkbox-based multi-selection |
+| Input | `CreateInput` | Numeric, max length, pattern and validation |
+| Keybind | `CreateKeybind` | Keyboard, mouse buttons, modifiers, modes |
+| ColorPicker | `CreateColorPicker` | HEX, alpha, palette and rainbow |
+| Button | `CreateButton` | Confirmation / warning flow |
+| Image Button | `CreateImageButton` | Icon-focused actions |
+| Paragraph | `CreateParagraph` | Rich text and callouts |
+| Progress Bar | `CreateProgressBar` | Animated progress display |
+| Image | `CreateImage` | Image content and loading presentation |
+| ListBox | `CreateListBox` | Selectable rows and add/remove |
+| Table | `CreateTable` | Columns, rows, selection and scrolling |
+| Collapsible | `CreateCollapsible` | Expandable nested content |
+
+### Common control API
+
+```lua
+local control = Section:CreateToggle({
+    Name = "Fly",
+    Flag = "Fly",
+})
+
+print(control:Get())
+control:Set(true)
+
+control:OnChanged(function(value)
+    print("Changed:", value)
+end)
+
+control:SetVisible(true)
+control:SetEnabled(true)
+control:SetName("Flight")
+control:SetTooltip("Enables the flight system.")
+control:Destroy()
+```
+
+---
+
+## 🎛️ Flags
+
+Flags are the shared state layer of VoidCriptUI.
+
+```lua
+Section:CreateToggle({
+    Name = "Fly",
+    Flag = "Fly_Toggle",
+})
+
+Section:CreateSlider({
+    Name = "Speed",
+    Flag = "Fly_Speed",
+    Range = {0, 500},
+    CurrentValue = 100,
+})
+```
+
+Read from anywhere:
+
+```lua
+if VoidLib.Flags["Fly_Toggle"] then
+    print("Speed:", VoidLib.Flags["Fly_Speed"])
+end
+```
+
+Equivalent accessors:
+
+```lua
+VoidLib:GetFlag("Fly_Toggle")
+VoidLib:GetControl("Fly_Toggle"):Get()
+```
+
+Change values:
+
+```lua
+VoidLib:SetFlag("Fly_Toggle", true)
+VoidLib:SetFlag("Fly_Speed", 250)
+```
+
+Subscribe:
+
+```lua
+VoidLib:OnFlagChanged("Fly_Toggle", function(value)
+    print("Fly changed:", value)
+end)
+
+VoidLib:OnFlagChanged("*", function(flag, value)
+    print(flag, value)
+end)
+```
+
+Strict development validation:
+
+```lua
+VoidLib:SetStrictFlags(true)
+```
+
+---
+
+## 🔗 Conditional visibility
+
+```lua
+Section:CreateToggle({
+    Name = "ESP",
+    Flag = "ESP",
+})
+
+Section:CreateSlider({
+    Name = "Distance",
+    Flag = "ESP_Distance",
+    DependsOn = "ESP",
+    Range = {0, 1000},
+})
+```
+
+Complex predicates are also supported:
+
+```lua
+Section:CreateKnob({
+    Name = "FOV",
+    Flag = "FOV",
+    DependsOn = function(flags)
+        return flags.ESP and flags.ESP_Distance > 100
+    end,
+})
+```
+
+Dependencies are event-driven instead of being evaluated every frame.
+
+---
+
+## 💾 Configs
+
+```lua
+VoidLib:SaveConfig("Default")
+VoidLib:LoadConfig("Default")
+
+local configs = VoidLib:ListConfigs()
+
+VoidLib:RenameConfig("Default", "PvP")
+VoidLib:DeleteConfig("PvP")
+```
+
+Share configuration as a string:
+
+```lua
+local code = VoidLib:ExportConfig()
+VoidLib:ImportConfig(code, "Imported")
+```
+
+Configuration can preserve typed values and library state such as flags, UI geometry, active tab, theme tokens, scale and keybind descriptors, subject to the active configuration settings.
+
+---
+
+## 🎨 Themes
 
 ```lua
 VoidLib:SetTheme({
@@ -472,93 +323,166 @@ VoidLib:SetTheme({
     Background = Color3.fromRGB(20, 20, 20),
     Text = Color3.fromRGB(255, 255, 255),
 })
+```
 
+Built-in presets:
+
+```lua
+VoidLib:SetThemePreset("Midnight")
+VoidLib:SetThemePreset("Blood")
 VoidLib:SetThemePreset("Ocean")
-VoidLib:RegisterTheme("Sunset", {
-    Accent = "#FF6B4A",
-    Background = "#14100F",
+VoidLib:SetThemePreset("Mono")
+VoidLib:SetThemePreset("Toxic")
+VoidLib:SetThemePreset("Amethyst")
+VoidLib:SetThemePreset("Light")
+```
+
+Custom theme:
+
+```lua
+VoidLib:RegisterTheme("MyTheme", {
+    Accent = Color3.fromRGB(145, 80, 255),
+    Background = Color3.fromRGB(15, 16, 22),
+    Text = Color3.fromRGB(245, 245, 250),
+})
+
+VoidLib:SetThemePreset("MyTheme")
+```
+
+---
+
+## 📱 Mobile and responsive UI
+
+VoidCriptUI uses adaptive sizing and device profiles rather than a single fixed desktop layout.
+
+```lua
+VoidLib:SetScale(0.95)
+VoidLib:SetCompact(true)
+
+print("Device:", VoidLib:GetDevice())
+print("Mobile:", VoidLib:IsMobile())
+```
+
+Profiles include:
+
+```text
+Phone
+Tablet
+Desktop
+Wide
+```
+
+Mobile-specific behaviour includes larger touch targets, a floating toggle bubble, compact mode and viewport-aware layouts.
+
+---
+
+## 🏷️ Watermark
+
+The Watermark is a native runtime UI component and is not merely a screenshot placed over the game.
+
+<img src="https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/Watermark.png" width="900" alt="VoidCriptUI Watermark">
+
+### Basic usage
+
+```lua
+local Watermark = VoidLib:Watermark({
+    Position = "TopRight",
+    Title = "My Script",
+
+    Modules = {
+        "logo",
+        "title",
+        "version",
+        "user",
+        "fps",
+        "fps1",
+        "ping",
+        "memory",
+        "time",
+    },
+
+    Draggable = true,
+    Visible = true,
 })
 ```
 
-Built-in presets include:
+### Player name
 
-```text
-Midnight
-Blood
-Ocean
-Mono
-Toxic
-Amethyst
-Light
+The `user` module resolves the current Roblox player at runtime:
+
+```lua
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local playerName = player and player.Name or "Player"
+print(playerName)
 ```
 
-The Appearance interface also exposes theme editing, font selection and UI scaling.
+No username is hard-coded into the Watermark.
 
-### Blur / glass note
+### Built-in modules
 
-The production backdrop uses deep dimming, vignette, gradients and glass-like UI primitives. It deliberately does not claim to implement a framebuffer blur through `EditableImage`; the Roblox API does not expose a generic “capture the game framebuffer behind this ScreenGui and blur it” primitive. The shipped implementation therefore prioritises a low-overhead visual effect over a misleading or expensive pseudo-blur implementation.
+```text
+logo
+ title
+ version
+ user
+displayname
+ fps
+ fps1
+ frametime
+ ping
+ memory
+ time
+ date
+ game
+ instances
+```
 
----
+### Custom Watermark modules
 
-## Mobile & Responsive UI
+```lua
+VoidLib:RegisterWatermarkModule(
+    "hp",
+    function()
+        local player = game:GetService("Players").LocalPlayer
+        local character = player and player.Character
+        local humanoid = character and character:FindFirstChildOfClass("Humanoid")
 
-VoidCriptUI is designed around multiple viewport profiles instead of one fixed desktop layout:
+        if not humanoid then
+            return nil
+        end
 
-| Profile | Behaviour |
-|---|---|
-| Phone | One-column content, enlarged touch targets, floating bubble |
-| Tablet | Two-column content where space allows, touch-friendly hitboxes |
-| Desktop | Full controls, resize handle, keyboard toggle |
-| Wide | Additional horizontal space, expanded layout |
+        return ("HP %d"):format(math.floor(humanoid.Health))
+    end,
+    {
+        Interval = 0.5,
+    }
+)
+```
 
-A compact mode reduces spacing on small screens. The mobile floating bubble replaces the need for a keyboard toggle on touch devices.
-
----
-
-## Watermark
-
-The watermark is modular and configurable.
+Then include it:
 
 ```lua
 VoidLib:Watermark({
-    Title = "My Script",
-    Position = "TopRight",
-    Draggable = true,
     Modules = {
         "logo",
         "title",
         "user",
         "fps",
-        "frametime",
         "ping",
-        "memory",
-        "time",
+        "hp",
     },
-})
-```
-
-Custom modules can be registered:
-
-```lua
-VoidLib:RegisterWatermarkModule("health", function()
-    local player = game:GetService("Players").LocalPlayer
-    local character = player and player.Character
-    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
-
-    return humanoid and ("HP %d"):format(humanoid.Health) or nil
-end, {
-    Interval = 0.5,
 })
 ```
 
 ---
 
-## Keybind List
+## ⌨️ Keylist
 
 ```lua
 VoidLib:Keylist({
-    Title = "Active Keybinds",
-    Position = "LeftCenter",
+    Title = "Keybinds",
     Columns = {
         "Name",
         "Mode",
@@ -568,26 +492,57 @@ VoidLib:Keylist({
         "Category",
         "LastUsed",
     },
+    Position = "LeftCenter",
     HideEmpty = true,
     OnlyActive = false,
     Draggable = true,
 })
 ```
 
-The keybind list can display the function name, binding mode, resolved key, active state, activation count, category and last-use information.
+The Keylist is designed to display more than a key label:
+
+```text
+Name
+Mode
+Key
+State
+Hits
+Category
+LastUsed
+```
+
+Supported modes include `Always`, `Toggle` and `Hold`.
 
 ---
 
-## Logging & Debugging
+## 🔔 Notifications and dialogs
+
+```lua
+VoidLib:Notify({
+    Title = "VoidCriptUI",
+    Content = "Settings saved successfully.",
+    Duration = 3,
+})
+```
+
+Confirmation flow:
+
+```lua
+VoidLib:Dialog({
+    Title = "Confirm action",
+    Content = "Are you sure you want to continue?",
+})
+```
+
+---
+
+## 🧰 Logging and debugging
 
 ```lua
 VoidLib:SetLogLevel("Debug")
-
-local entries = VoidLib:GetLogs()
-VoidLib:ClearLogs()
 ```
 
-Supported levels:
+Levels:
 
 ```text
 Off
@@ -597,25 +552,32 @@ Info
 Debug
 ```
 
-Callbacks are guarded so an exception in a user callback can be logged without tearing down the whole UI.
+Read and clear logs:
 
 ```lua
-VoidLib:Guard("My operation", function()
-    -- code that should be isolated from UI failure
+local logs = VoidLib:GetLogs()
+VoidLib:ClearLogs()
+```
+
+Guard callbacks:
+
+```lua
+VoidLib:Guard("MyFeature", function()
+    error("test error")
 end)
 ```
 
-The runtime console / F9 is the primary low-level debugging surface; the Interface tab also exposes the recorded log history where supported by the build.
+The guarded callback model prevents a user callback exception from automatically destroying the entire UI flow.
 
 ---
 
-## Plugins
+## 🧩 Plugins
 
-Plugins extend the library without modifying its core source.
+Plugins can add behaviour without editing the library core.
 
 ```lua
 VoidLib:RegisterPlugin({
-    Name = "MyWidgets",
+    Name = "MyPlugin",
     Version = "1.0.0",
 
     Icons = {
@@ -624,258 +586,278 @@ VoidLib:RegisterPlugin({
 
     Themes = {
         Neon = {
-            Accent = "#00FFD0",
+            Accent = Color3.fromRGB(0, 255, 210),
         },
     },
 
     WatermarkModules = {
         status = function()
-            return "READY"
+            return "ONLINE"
         end,
     },
+})
+```
 
-    OnWindow = function(window)
-        -- optional hook
-    end,
+The plugin architecture can provide custom elements, icons, themes, Watermark modules and lifecycle hooks.
 
-    OnUnload = function(lib)
-        -- optional cleanup
+---
+
+## ⚡ Performance design
+
+VoidCriptUI is structured around low-overhead updates.
+
+### Lazy tabs
+
+```text
+Create tab
+    ↓
+Create lightweight handles
+    ↓
+User opens tab
+    ↓
+Materialize controls
+```
+
+### CanvasGroup fades
+
+Window-level fades use:
+
+```lua
+CanvasGroup.GroupTransparency
+```
+
+rather than updating every descendant separately.
+
+### Slider callback throttling
+
+```lua
+Section:CreateSlider({
+    Name = "Heavy Feature",
+    Flag = "Heavy",
+    Range = {0, 100},
+    CallbackOnRelease = true,
+    Callback = function(value)
+        -- expensive work
     end,
 })
 ```
 
-The plugin system is intended for custom elements, icons, themes and lifecycle hooks.
+### Profiling
+
+```lua
+local profile = VoidLib:GetProfile()
+local metrics = VoidLib:GetMetrics()
+```
+
+Use these APIs to inspect runtime information exposed by the built-in profiler.
 
 ---
 
-## API Reference
+## 📝 Rich text
+
+Supported rich-text syntax depends on the active component/parser, with the project documentation covering the supported markdown-like forms.
+
+Examples:
+
+```text
+**bold**
+*italic*
+__underline__
+~~strike~~
+`inline code`
+> quote
+- bullet
+```
+
+---
+
+## 📚 API reference
 
 ### Window
 
 ```lua
-Window:CreateTab(name, icon, subtabs)
-Window:SelectTab(tab)
-Window:GetTabs()
-Window:GetActiveTab()
+local Window = VoidLib:CreateWindow({
+    Name = "My Script",
+    Subtitle = "v1.0",
+    ToggleKey = "RightShift",
+    LazyLoading = true,
+    Resizable = true,
+    MinimiseStyle = "Icon",
+})
+```
 
-Window:Show()
-Window:Hide()
-Window:Toggle()
-Window:IsVisible()
+Common methods include:
 
-Window:Minimise()
-Window:Restore()
-Window:ToggleMinimise()
-
-Window:SetTitle(text)
-Window:SetSubtitle(text)
-Window:SetToggleKey(key)
-Window:GetToggleKey()
-
-Window:SaveConfiguration()
-Window:LoadConfiguration()
-Window:OpenInterfaceTab()
-Window:Destroy()
+```text
+CreateTab
+SelectTab
+GetTabs
+GetActiveTab
+Show
+Hide
+Toggle
+IsVisible
+Minimise
+Restore
+ToggleMinimise
+SetTitle
+SetSubtitle
+SetToggleKey
+GetToggleKey
+SaveConfiguration
+LoadConfiguration
+OpenInterfaceTab
+Destroy
 ```
 
 ### Library
 
-```lua
--- Flags
-VoidLib:GetFlag(flag, default)
-VoidLib:SetFlag(flag, value, silent)
-VoidLib:HasFlag(flag)
-VoidLib:GetControl(flag)
-VoidLib:OnFlagChanged(flag, callback)
-VoidLib:ListFlags()
-VoidLib:SnapshotFlags()
-VoidLib:SetStrictFlags(enabled)
+```text
+GetFlag
+SetFlag
+HasFlag
+GetControl
+OnFlagChanged
+ListFlags
+SnapshotFlags
+SetStrictFlags
 
--- Themes
-VoidLib:SetTheme(tokens, instant)
-VoidLib:SetThemePreset(name)
-VoidLib:RegisterTheme(name, tokens)
-VoidLib:ListThemes()
-VoidLib:GetTheme()
+SetTheme
+SetThemePreset
+RegisterTheme
+ListThemes
+GetTheme
 
--- Scale
-VoidLib:SetScale(value)
-VoidLib:SetCompact(enabled)
-VoidLib:GetDevice()
-VoidLib:IsMobile()
-VoidLib:SetSliderStyle(style)
+SetScale
+SetCompact
+GetDevice
+IsMobile
 
--- Feedback
-VoidLib:Notify(config)
-VoidLib:NotifyProgress(config)
-VoidLib:Dialog(config)
-VoidLib:Prompt(config)
-VoidLib:Choice(config)
+Notify
+NotifyProgress
+Dialog
+Prompt
+Choice
 
--- Overlays
-VoidLib:Watermark(config)
-VoidLib:RegisterWatermarkModule(name, callback, options)
-VoidLib:Keylist(config)
+Watermark
+RegisterWatermarkModule
+Keylist
 
--- Configs
-VoidLib:SaveConfig(name)
-VoidLib:LoadConfig(name)
-VoidLib:ListConfigs()
-VoidLib:DeleteConfig(name)
-VoidLib:RenameConfig(oldName, newName)
-VoidLib:ExportConfig()
-VoidLib:ImportConfig(code, name)
-VoidLib:SetAutoSave(enabled, delay)
+SaveConfig
+LoadConfig
+ListConfigs
+DeleteConfig
+RenameConfig
+ExportConfig
+ImportConfig
+SetAutoSave
 
--- Logging / profiling
-VoidLib:SetLogLevel(level)
-VoidLib:GetLogLevel()
-VoidLib:GetLogs(limit)
-VoidLib:ClearLogs()
-VoidLib:Guard(context, callback, ...)
-VoidLib:GetProfile()
-VoidLib:GetProfileString()
-VoidLib:GetMetrics()
+SetLogLevel
+GetLogLevel
+GetLogs
+ClearLogs
+Guard
+GetProfile
+GetProfileString
+GetMetrics
 
--- Plugins / lifecycle
-VoidLib:RegisterPlugin(plugin)
-VoidLib:UnregisterPlugin(name)
-VoidLib:ListPlugins()
-VoidLib:Unload()
-VoidLib:ClearLoaderCache()
-VoidLib:GetLoaderInfo()
+RegisterPlugin
+UnregisterPlugin
+ListPlugins
+Boot
+Unload
+ClearLoaderCache
 ```
 
-> The exact available constructor fields are the source of truth for the release. See the Wiki/API Reference for the full option-by-option list and examples.
+For the complete API surface, use the [official Wiki](https://github.com/WorkAccount211/VoidCriptUI_lib-Final-/wiki).
 
 ---
 
-## Project Structure
+## 📁 Project structure
 
 ```text
 VoidCriptUI_lib-Final-/
 │
-├─ VoidCriptUI.lua              # main versioned loader
-├─ VoidCriptUI.min.lua           # minified loader
-├─ README.md                     # this file
-├─ LICENSE                       # project license
-├─ .gitignore
+├── VoidCriptUI.lua              # public full loader
+├── VoidCriptUI.min.lua           # compact loader
+├── README.md
+├── LICENSE
+├── .gitignore
 │
-├─ VoidCriptUI-LIB/
-│  ├─ init.lua
-│  ├─ Core/
-│  ├─ Elements/
-│  ├─ Services/
-│  ├─ Components/
-│  └─ Window/
+├── images/
+│   ├── banner.png
+│   ├── icon.png
+│   └── Watermark.png
 │
-├─ examples/
-│  ├─ basic.lua
-│  ├─ BaseExample.lua
-│  ├─ advanced.lua
-│  └─ theming.lua
+├── VoidCriptUI-LIB/
+│   ├── Core/
+│   ├── Elements/
+│   ├── Services/
+│   ├── Components/
+│   ├── Window/
+│   └── init.lua
 │
-├─ images/
-│  ├─ symbol.png
-│  └─ Watermark.png
+├── examples/
+│   ├── basic.lua
+│   ├── BaseExample.lua
+│   ├── advanced.lua
+│   └── theming.lua
 │
-└─ wiki/                        # Markdown sources prepared for GitHub Wiki
+└── wiki/
+    └── Wiki source Markdown files
 ```
 
 ---
 
-## Examples
+## 🧪 Examples
 
 | File | Purpose |
 |---|---|
-| [`basic.lua`](examples/basic.lua) | Minimal first GUI |
-| [`BaseExample.lua`](examples/BaseExample.lua) | Broad element showcase and options |
-| [`advanced.lua`](examples/advanced.lua) | Advanced multi-feature example |
-| [`theming.lua`](examples/theming.lua) | Themes, fonts, scaling and customisation |
-
-Start with `basic.lua`, then use `BaseExample.lua` as the reference while building your own script.
+| `examples/basic.lua` | Smallest practical starting point |
+| `examples/BaseExample.lua` | Broad element showcase |
+| `examples/advanced.lua` | Advanced composition and extension examples |
+| `examples/theming.lua` | Themes, presets, scaling and customization |
 
 ---
 
-## Documentation
+## 🗺️ Roadmap
 
-Full documentation is intended to live in the GitHub Wiki:
+The project includes the selected Roadmap scope from the VoidCript specification, covering the requested UI controls, adaptive behaviour, configuration, runtime themes, lifecycle APIs, validation, Watermark, Keylist and versioned loader work.
+
+The full roadmap source is kept in:
 
 ```text
-Home
-Getting Started
-Elements
-Flags & State
-Configs
-Theming
-Mobile & Scaling
-Logging & Debugging
-Plugins
-Performance
-API Reference
-FAQ
-Loader
-```
-
-The repository's `wiki/` directory contains the prepared Markdown sources used to publish that documentation.
-
----
-
-## Roadmap / Release Scope
-
-### Included in v3.0.0
-
-The selected Roadmap scope includes range sliders, keyboard-editable slider values, advanced keybinds, combined control rows, HEX/rainbow color controls, progress bars, images, tables, global search, resize/minimise, saved window state, mobile support, custom cursor/input lock, config manager, runtime themes, presets/editor/fonts/scale, idempotent unload, destroy/clear, `DependsOn`, validation, connection cleanup, slider throttling, guarded callbacks, window visibility signals, extended watermark, keybind list and the versioned/minified loader.
-
-### Not part of this selected scope
-
-The original 45-item Roadmap also contains ideas that were not selected in the original specification, including free drag-and-drop tab ordering, pinned favourites, cloud configs, strict type exports, standalone unit-test infrastructure and CI. They should not be described as shipped unless they are added explicitly in a later release.
-
----
-
-## Versioning
-
-Use the moving `main` entry point for development:
-
-```lua
-loadstring(game:HttpGet(
-    "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/VoidCriptUI.lua"
-))()
-```
-
-Use a tag for reproducible production deployments:
-
-```lua
-loadstring(game:HttpGet(
-    "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/v3.0.0/VoidCriptUI.lua"
-))()
-```
-
-The same tag can be used in the loader's `Version` option to pin internal module downloads.
-
----
-
-## Repository & Links
-
-```text
-Repository:
-https://github.com/WorkAccount211/VoidCriptUI_lib-Final-
-
-Raw loader:
-https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/VoidCriptUI.lua
-
-Wiki:
-https://github.com/WorkAccount211/VoidCriptUI_lib-Final-/wiki
+VoidCript_RoadMap.txt
 ```
 
 ---
+
+## ⚠️ Compatibility
+
+VoidCriptUI targets the Roblox/Luau runtime and uses services and APIs available in that environment.
+
+Optional filesystem-backed caching depends on the runtime exposing compatible filesystem functions. Exact behaviour can also vary with Roblox changes and third-party execution environments.
+
+Test the exact release you deploy.
+
+---
+
+## 📄 License
+
+VoidCriptUI is distributed under the **VoidCript Community Software License, Version 1.0**.
+
+The complete license is maintained in the repository:
+
+**[Read the VoidCript License](https://github.com/WorkAccount211/VoidCriptUI_lib-Final-/blob/main/LICENSE)**
+
+---
+
+## 💜 Credits
 
 <div align="center">
 
-**Built by VoidCript.**
+**Built by VoidCript**
 
-A modular UI library focused on visual polish, responsive UX and predictable runtime behaviour.
-
-<sub>Design language inspired by the visual direction of CompKiller and the ergonomics of Weave; implementation in this repository is maintained as VoidCriptUI.</sub>
+Independent modular Roblox/Luau UI project focused on visual quality, extensibility, responsiveness and predictable runtime behaviour.
 
 </div>
