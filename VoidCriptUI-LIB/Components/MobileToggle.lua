@@ -19,7 +19,7 @@ return function(Void)
 	local MobileToggle = {}
 	MobileToggle.__index = MobileToggle
 
-	local SYMBOL = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/refs/heads/main/images/symbol.png"
+	local SYMBOL = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/icon.png"
 
 	function MobileToggle.new(window, cfg)
 		cfg = cfg or {}
