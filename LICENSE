@@ -1,0 +1,435 @@
+VOIDCRIPT COMMUNITY SOFTWARE LICENSE
+Version 1.0
+Copyright (c) 2026 VoidCript
+
+This license applies to the VoidCript software and the portions of the
+project distributed under this license.
+
+"VoidCript" refers to the official VoidCript project, its maintainers,
+authors, and the official source distribution.
+
+"Software" means the source code, Luau/Lua code, modules, loaders,
+examples, configuration-related code, documentation, scripts, and other
+copyrightable material explicitly distributed under this license.
+
+By obtaining, using, copying, modifying, or distributing the Software,
+you agree to the terms of this license.
+
+--------------------------------------------------
+1. PERMISSION
+--------------------------------------------------
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of the Software, to use, study, copy, modify, adapt, merge,
+publish, distribute, sublicense, and otherwise work with the Software,
+subject to the conditions described below.
+
+The Software may be used for personal, educational, research,
+development, testing, open-source, private, or commercial projects.
+
+You may:
+
+- use the Software in your own projects;
+- copy the Software;
+- modify the Software;
+- create forks and derivative works;
+- create extensions, plugins, themes, integrations, and utilities;
+- include portions of the Software in a larger project;
+- distribute original or modified versions;
+- use the Software commercially;
+- charge for independent services, support, hosting, development,
+  customization, packaging, or products that contain or depend upon
+  the Software.
+
+No fee is owed to VoidCript solely because you use or distribute the
+Software in accordance with this license.
+
+--------------------------------------------------
+2. COPYRIGHT AND LICENSE NOTICE
+--------------------------------------------------
+
+The copyright notice, license notice, and attribution contained in the
+Software must be preserved in copies or substantial portions of the
+Software.
+
+When distributing the Software, a substantial portion of the Software,
+or a derivative work materially based upon the Software, you must make
+a reasonable effort to provide a copy of this license.
+
+You may place the license in a LICENSE file, documentation section,
+credits section, about page, source distribution, or another location
+reasonably appropriate for the form in which the Software is distributed.
+
+You are not required to display VoidCript branding in a user interface
+solely because your project uses the Software, but you must not remove
+copyright or license information when redistribution requires it.
+
+--------------------------------------------------
+3. MODIFICATIONS AND DERIVATIVE WORKS
+--------------------------------------------------
+
+You are free to modify the Software for your own purposes.
+
+You may publish modified versions, forks, rewritten versions, ports,
+optimizations, compatibility layers, plugins, themes, or other works
+derived from the Software.
+
+When distributing a modified version, you must not intentionally present
+your modifications as the exact official VoidCript release.
+
+A modified distribution should make it reasonably clear that it has been
+changed when such distinction is relevant to users.
+
+Examples of acceptable descriptions include:
+
+"Based on VoidCript"
+"Fork of VoidCript"
+"VoidCript-based project"
+"Modified VoidCript"
+"Compatible with VoidCript"
+
+You may choose your own project name for a fork or derivative work,
+provided that the new name does not intentionally create confusion about
+whether the project is an official VoidCript distribution.
+
+--------------------------------------------------
+4. OFFICIAL STATUS AND REPRESENTATION
+--------------------------------------------------
+
+This license grants rights to the Software, but it does not grant
+permission to falsely claim that your project, fork, modification,
+plugin, service, distribution, or release is officially maintained,
+approved, endorsed, certified, or published by VoidCript.
+
+You may describe compatibility or derivation truthfully.
+
+You may not knowingly use the name "VoidCript" in a manner intended to
+deceive users into believing that your work is the official release
+when it is not.
+
+Nothing in this section prevents ordinary factual statements such as:
+
+"This project uses VoidCript."
+"This project is based on VoidCript."
+"This plugin was developed for VoidCript."
+"This is an independent fork of VoidCript."
+
+--------------------------------------------------
+5. TRADEMARKS AND BRAND ASSETS
+--------------------------------------------------
+
+This license covers copyrightable Software, not trademark rights.
+
+The VoidCript name, logo, symbol, artwork, visual identity, domains,
+official social accounts, and other branding elements may be protected
+separately.
+
+Permission to use the Software does not automatically grant ownership,
+registration rights, or exclusive rights to VoidCript branding.
+
+You may use the project name to provide truthful attribution or describe
+compatibility, provided that such use does not falsely imply endorsement
+or official status.
+
+Redistribution of source code does not automatically grant permission to
+create a misleadingly similar official-looking website, repository,
+download page, or service.
+
+--------------------------------------------------
+6. COMMERCIAL USE
+--------------------------------------------------
+
+Commercial use is permitted.
+
+You may use VoidCript in commercial software, tools, services,
+development environments, scripts, packaged distributions, or other
+products, provided that your distribution remains compliant with this
+license.
+
+You may charge money for your own work surrounding the Software.
+
+For example, you may charge for:
+
+- custom development;
+- technical support;
+- consulting;
+- hosting;
+- integration;
+- themes;
+- plugins;
+- configuration services;
+- packaged applications;
+- private modifications;
+- educational material;
+- maintenance;
+- other independent services.
+
+Charging a fee does not transfer ownership of the original VoidCript
+copyright to you.
+
+--------------------------------------------------
+7. THIRD-PARTY MATERIAL
+--------------------------------------------------
+
+VoidCript may interact with or contain material provided by third
+parties, including but not limited to libraries, services, APIs, images,
+fonts, assets, platforms, repositories, or external dependencies.
+
+Third-party material may be subject to separate terms.
+
+This license does not replace, override, or grant rights under a
+third-party license.
+
+Where a component contains a specific license notice, that notice
+continues to apply to that component.
+
+Users are responsible for respecting the licenses and terms applicable
+to third-party materials.
+
+--------------------------------------------------
+8. EXTERNAL SERVICES AND DISTRIBUTION
+--------------------------------------------------
+
+Some versions of VoidCript may retrieve source files, assets,
+configuration data, updates, or other resources from external locations.
+
+VoidCript does not guarantee that any external service, repository,
+content delivery network, endpoint, mirror, or third-party provider will
+remain available.
+
+A change to an external service, URL, API, platform, repository,
+configuration, network environment, or third-party dependency does not
+by itself constitute a violation of this license.
+
+Users may replace, mirror, cache, or adapt external resource handling
+where permitted by the applicable licenses and service terms.
+
+--------------------------------------------------
+9. NO OBLIGATION TO PUBLISH MODIFICATIONS
+--------------------------------------------------
+
+This license does not require you to publish modifications to the
+Software.
+
+You may keep your modifications private.
+
+If you choose to distribute modifications, the requirements of this
+license apply to the portions covered by this license.
+
+You are not required to release unrelated source code belonging entirely
+to your own project merely because your project uses VoidCript.
+
+--------------------------------------------------
+10. CONTRIBUTIONS
+--------------------------------------------------
+
+A contribution submitted to the official VoidCript project should be
+provided with the understanding that the maintainers may review,
+modify, combine, distribute, and maintain the contribution as part of
+the project.
+
+Unless a separate written agreement states otherwise, contributors
+retain ownership of their original contribution while granting the
+project the rights reasonably necessary to use that contribution as
+part of VoidCript.
+
+Submitting a contribution does not automatically transfer ownership of
+unrelated intellectual property to VoidCript.
+
+--------------------------------------------------
+11. SECURITY AND RESPONSIBLE USE
+--------------------------------------------------
+
+The Software is intended to be used lawfully and responsibly.
+
+This license does not grant permission to use VoidCript or derivative
+works for activity that is unlawful, fraudulent, destructive, malicious,
+or intended to compromise systems, steal information, bypass security
+controls, or cause unauthorized harm.
+
+Users remain responsible for ensuring that their use of the Software
+complies with applicable laws, platform rules, service agreements,
+third-party terms, and other requirements applicable to their environment.
+
+The existence of a technical capability in the Software does not
+constitute authorization to use that capability against a system,
+account, service, or person without permission.
+
+--------------------------------------------------
+12. COMPATIBILITY AND ENVIRONMENT
+--------------------------------------------------
+
+VoidCript may be designed for specific Lua, Luau, Roblox, executor,
+device, operating system, or runtime environments.
+
+This license does not guarantee compatibility with any particular
+environment.
+
+A user may adapt or modify the Software to improve compatibility.
+
+Such modifications remain subject to the applicable provisions of this
+license when distributed.
+
+--------------------------------------------------
+13. NO WARRANTY
+--------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT,
+SECURITY, RELIABILITY, AVAILABILITY, ACCURACY, OR FITNESS FOR ANY
+PARTICULAR ENVIRONMENT.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VOIDCRIPT AND ITS
+AUTHORS, MAINTAINERS, CONTRIBUTORS, AND DISTRIBUTORS DISCLAIM ALL
+WARRANTIES AND MAKE NO GUARANTEE THAT THE SOFTWARE WILL BE ERROR-FREE,
+SECURE, UNINTERRUPTED, OR COMPATIBLE WITH ANY PARTICULAR VERSION,
+PLATFORM, GAME, DEVICE, OR RUNTIME.
+
+--------------------------------------------------
+14. LIMITATION OF LIABILITY
+--------------------------------------------------
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VOIDCRIPT AND ITS
+AUTHORS, MAINTAINERS, CONTRIBUTORS, AND DISTRIBUTORS SHALL NOT BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+CONSEQUENTIAL, OR OTHER DAMAGES ARISING FROM OR RELATED TO THE
+SOFTWARE OR THE USE, INABILITY TO USE, MODIFICATION, DISTRIBUTION, OR
+PERFORMANCE OF THE SOFTWARE.
+
+THIS INCLUDES, WITHOUT LIMITATION, LOSS OF DATA, LOSS OF PROFITS,
+SERVICE INTERRUPTION, CONFIGURATION LOSS, COMPATIBILITY FAILURES,
+ACCOUNT CONSEQUENCES, SOFTWARE FAILURES, OR OTHER DAMAGES.
+
+--------------------------------------------------
+15. USER RESPONSIBILITY
+--------------------------------------------------
+
+You are responsible for evaluating and testing the Software before
+using it in an environment where failure may cause loss, interruption,
+or other consequences.
+
+You should maintain appropriate backups and independently verify
+downloaded code, dependencies, modifications, and configurations.
+
+You are responsible for the scripts, plugins, integrations,
+configurations, and derivative works that you create.
+
+--------------------------------------------------
+16. LICENSE COMPATIBILITY
+--------------------------------------------------
+
+You may combine VoidCript with other software where the licenses of all
+combined components permit such combination.
+
+Nothing in this license requires you to remove or violate the license
+terms of another component.
+
+If another component has requirements that conflict with this license,
+you must comply with both licenses where possible or avoid distributing
+the incompatible combination.
+
+--------------------------------------------------
+17. VERSIONING
+--------------------------------------------------
+
+VoidCript may be distributed in versioned releases.
+
+Different releases may include different files, dependencies,
+capabilities, or license notices.
+
+Unless explicitly stated otherwise, a release is governed by the license
+distributed with that release.
+
+VoidCript may publish future versions under this license, a revised
+version of this license, or another license.
+
+A change of license for a future release does not retroactively change
+the license attached to previously distributed releases.
+
+--------------------------------------------------
+18. LICENSE TERMINATION
+--------------------------------------------------
+
+The rights granted by this license terminate automatically if you
+materially violate its terms.
+
+If your rights terminate, you must stop the activity that constitutes
+the violation and comply with applicable legal requirements concerning
+copies or distributions.
+
+Where legally permitted, rights may be restored if the violation is
+corrected and VoidCript explicitly agrees to restore permission.
+
+Termination does not automatically invalidate rights that were lawfully
+exercised before termination where applicable law protects those rights.
+
+--------------------------------------------------
+19. SEVERABILITY
+--------------------------------------------------
+
+If any provision of this license is found to be invalid or
+unenforceable, the remaining provisions remain in effect to the maximum
+extent permitted by law.
+
+The affected provision should be interpreted or limited only as much as
+necessary to make it enforceable while preserving its intended purpose
+where legally possible.
+
+--------------------------------------------------
+20. NO REQUIREMENT TO PROVIDE SUPPORT
+--------------------------------------------------
+
+This license does not require VoidCript or its maintainers to provide
+technical support, documentation, updates, bug fixes, security fixes,
+compatibility fixes, or custom development.
+
+Support may be provided voluntarily or separately.
+
+--------------------------------------------------
+21. NO OWNERSHIP TRANSFER
+--------------------------------------------------
+
+Use of the Software does not transfer ownership of the Software,
+copyright, trademarks, artwork, project identity, or other intellectual
+property belonging to VoidCript or its respective owners.
+
+You receive the permissions expressly granted by this license and no
+ownership beyond those permissions.
+
+--------------------------------------------------
+22. ENTIRE LICENSE
+--------------------------------------------------
+
+This document represents the complete license grant for the Software
+unless a specific file or component expressly states that a different
+license applies.
+
+No issue comment, pull request, discussion, example, social media post,
+or informal statement should be interpreted as modifying this license
+unless an authorized written license change is published by VoidCript.
+
+--------------------------------------------------
+23. FINAL TERMS
+--------------------------------------------------
+
+VoidCript is intended to be usable, extendable, and accessible to
+developers and users who wish to build their own projects around it.
+
+You are encouraged to create improvements, plugins, themes, integrations,
+documentation, examples, compatibility layers, and derivative works.
+
+The primary expectations are simple:
+
+Use the Software responsibly.
+Preserve required attribution and license information.
+Be honest about whether your work is official or modified.
+Respect third-party rights and applicable laws.
+Do not misuse the VoidCript name or branding to deceive users.
+
+Except for the restrictions and requirements expressly stated above,
+you are free to use, modify, copy, and distribute the Software.
+
+Copyright (c) 2026 VoidCript
+
+Licensed under the VoidCript Community Software License, Version 1.0.
