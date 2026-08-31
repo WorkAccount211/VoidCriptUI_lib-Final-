@@ -26,7 +26,7 @@ return function(Void)
 	local Boot = {}
 	Boot.__index = Boot
 
-	local SYMBOL = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/refs/heads/main/images/symbol.png"
+	local SYMBOL = "https://raw.githubusercontent.com/WorkAccount211/VoidCriptUI_lib-Final-/main/images/icon.png"
 
 	function Boot.new(cfg)
 		cfg = cfg or {}
